@@ -52,8 +52,8 @@ const elementGallery = document.querySelector('#gallery');
 
 const createList = ({ url, alt }) => {
     return `
-    <li>
-<img src = '${url}' alt = '${alt}'/>
+    <li class="foto-list">
+      <img class="image-style" src = '${url}' alt = '${alt}'/>
     </li>
     `
 };
