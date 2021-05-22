@@ -16,9 +16,11 @@
 
 
 const itemEl = document.querySelectorAll('.item');
+
 const amountOfElementsAnimals = document.querySelectorAll('#categories > li:nth-child(1) > ul');
 const amountOfElementsProducts = document.querySelectorAll('#categories > li:nth-child(2) > ul');
 const amountOfElementsTechnologies = document.querySelectorAll('#categories > li:nth-child(3) > ul');
+
 const animalsValue = document.querySelectorAll('#categories > li:nth-child(1) > h2');
 const productsValue = document.querySelectorAll('#categories > li:nth-child(2) > h2');
 const technologiesValue = document.querySelectorAll('#categories > li:nth-child(3) > h2');
