@@ -14,26 +14,13 @@
 Количество элементов: 4
 */
 
-
 const itemEl = document.querySelectorAll('.item');
-
-const amountOfElementsAnimals = document.querySelectorAll('#categories > li:nth-child(1) > ul');
-const amountOfElementsProducts = document.querySelectorAll('#categories > li:nth-child(2) > ul');
-const amountOfElementsTechnologies = document.querySelectorAll('#categories > li:nth-child(3) > ul');
-
-const animalsValue = document.querySelectorAll('#categories > li:nth-child(1) > h2');
-const productsValue = document.querySelectorAll('#categories > li:nth-child(2) > h2');
-const technologiesValue = document.querySelectorAll('#categories > li:nth-child(3) > h2');
-
 console.log(`В списке ${itemEl.length} категории`)
 
-animalsValue.forEach(el => console.log(`Категория: ${el.textContent}`));
-amountOfElementsAnimals.forEach(el => console.log(`Количество элементов: ${el.children.length}`));
+const productsValue = document.querySelectorAll('ul li h2');
 
-productsValue.forEach(el => console.log(`Категория: ${el.textContent}`));
-amountOfElementsProducts.forEach(el => console.log(`Количество элементов: ${el.children.length}`));
-
-technologiesValue.forEach(el => console.log(`Категория: ${el.textContent}`));
-amountOfElementsTechnologies.forEach(el => console.log(`Количество элементов: ${el.children.length}`));
-
-
+for (let i = 0; i < productsValue.length; i += 1) {
+    console.log(`Категория: ${productsValue[i].textContent}`);
+    const listValue = document.querySelectorAll('ul li ul');
+    console.log(`Количество элементов: ${listValue[i].children.length}`)
+};

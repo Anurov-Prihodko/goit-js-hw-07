@@ -14,14 +14,12 @@ const refs = {
 };
 
 refs.inputEl.addEventListener('input', onInputChange);
-refs.nameEl.addEventListener('input', onInputChange);
 
 function onInputChange(text) {
-    if (text.target.value === '') {
-        refs.nameEl.textContent = 'незнакомец';
-    } else {
-        refs.nameEl.textContent = text.currentTarget.value;
-    };   
+    text.target.value.trim() === '' ?
+        refs.nameEl.textContent = 'незнакомец' :
+        refs.nameEl.textContent = text.currentTarget.value
 };
+
 
 
