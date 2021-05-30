@@ -32,12 +32,12 @@ const refs = {
 refs.renderEl.addEventListener('click', createBoxes);
 refs.destroyEl.addEventListener('click', destroyBoxes);
 
-let startSize = 20;
+let divSize = 20;
 
 function createBoxes(amount) {
-  startSize += 10;
+  divSize += 10;
 
-  refs.boxEl.insertAdjacentHTML('afterbegin', `<div style = "width: ${startSize}px; height: ${startSize}px; display: block;
+  refs.boxEl.insertAdjacentHTML('afterbegin', `<div style = "width: ${divSize}px; height: ${divSize}px; display: block;
     background-color: rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)});">
   </div>`);
 };
