@@ -17,10 +17,7 @@
 const itemEl = document.querySelectorAll('.item');
 console.log(`В списке ${itemEl.length} категории`)
 
-const productsValue = document.querySelectorAll('ul li h2');
-
-for (let i = 0; i < productsValue.length; i += 1) {
-    console.log(`Категория: ${productsValue[i].textContent}`);
-    const listValue = document.querySelectorAll('ul li ul');
-    console.log(`Количество элементов: ${listValue[i].children.length}`)
-};
+itemEl.forEach(e => {
+    console.log(`Категория: ${e.querySelector('h2').textContent}`);
+    console.log(`Количество элементов: ${e.querySelector('ul').children.length}`);
+});

@@ -23,19 +23,30 @@
 
 <div id="boxes"></div>
 */
+const refs = {
+  renderEl: document.querySelector('[data-action="render"]'),
+  destroyEl: document.querySelector('[data-action="destroy"]'),
+  boxEl: document.querySelector('#boxes'),
+}
 
-const numberEl = document.querySelector('#controls > input[type=number]');
-const renderEl = document.querySelector('#controls > button:nth-child(2)');
-const destroyEl = document.querySelector('#controls > button:nth-child(3)');
-const boxEl = document.querySelector('#boxes');
+refs.renderEl.addEventListener('click', createBoxes);
+refs.destroyEl.addEventListener('click', destroyBoxes);
 
-console.log(boxEl);
+let startSize = 20;
 
-// СЛУЧАЙНИЙ ЦВЕТ У DIV
-// var box = document.createElement('div');
+function createBoxes(amount) {
+  startSize += 10;
 
-// box.style.backgroundColor = `rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)})`;
+  refs.boxEl.insertAdjacentHTML('afterbegin', `<div style = "width: ${startSize}px; height: ${startSize}px; display: block;
+    background-color: rgb(${getRandom(0, 255)}, ${getRandom(0, 255)}, ${getRandom(0, 255)});">
+  </div>`);
+};
 
-// function getRandom(min, max){
-//     return Math.ceil(Math.random() * (max - min) + min);
-// }
+function getRandom(min, max){
+    return Math.ceil(Math.random() * (max - min) + min);
+};
+
+function destroyBoxes() {
+  refs.boxEl.innerHTML = '';
+  startSize = 20;
+};

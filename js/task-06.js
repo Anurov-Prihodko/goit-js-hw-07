@@ -34,13 +34,15 @@ inputEl.addEventListener('blur', onInputValidation);
 
 function onInputValidation() {    
     if (inputEl.value.length === Number(lengthOfInput)) {
-        inputEl.classList.add('valid')
-      return inputEl.classList.remove('invalid')          
+      inputEl.classList.add('valid');
+      inputEl.classList.remove('invalid');
+      return;
     } if (inputEl.value.length === 0) {
-      inputEl.classList.remove('valid')
-      return inputEl.classList.remove('invalid')
+      inputEl.classList.remove('valid');
+      inputEl.classList.remove('invalid');
+      return;
   }        
-      inputEl.classList.add('invalid')
-     return inputEl.classList.remove('valid')      
+  inputEl.classList.add('invalid');
+  inputEl.classList.remove('valid');
 };
 
